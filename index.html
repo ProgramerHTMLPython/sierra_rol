@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Selector Team</title>
+  <style>
+    body {
+      background-color: blue;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      color: white;
+    }
+    .label {
+      background-color: black;
+      padding: 10px;
+      margin: 10px auto;
+      width: 300px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+    button {
+      background-color: red;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="grupo" class="label">Grupo: ?</div>
+  <div id="team1" class="label">Primer Team: ?</div>
+  <div id="team2" class="label">Segundo Team: ?</div>
+  <button onclick="elegirAleatorios()">Elegir Aleatorios</button>
+
+  <script>
+    const bandidos = [
+      'Compañia Group', 'Grupo N', 'Grupo S',
+      'Grupo S', 'Grupo J', 'Grupo G'
+    ];
+
+    const policias_corruptos = [
+      'National Guard', "CFE'S Army", 'Marina',
+      'Army', 'Police'
+    ];
+
+    function elegirAleatorios() {
+      const grupo = bandidos[Math.floor(Math.random() * bandidos.length)];
+      const team1 = policias_corruptos[Math.floor(Math.random() * policias_corruptos.length)];
+      const team2 = policias_corruptos[Math.floor(Math.random() * policias_corruptos.length)];
+
+      document.getElementById("grupo").textContent = `Grupo: ${grupo}`;
+      document.getElementById("team1").textContent = `Primer Team: ${team1}`;
+      document.getElementById("team2").textContent = `Segundo Team: ${team2}`;
+    }
+  </script>
+
+</body>
+</html>
